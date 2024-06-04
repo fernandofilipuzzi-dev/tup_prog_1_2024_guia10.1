@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModeloAppVentana.Properties
+namespace Ejercicio3_Infracciones.Properties
 {
 
 
