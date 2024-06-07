@@ -31,11 +31,11 @@
             this.btnAgregarNumero = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDistancia = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbPublico = new System.Windows.Forms.RadioButton();
+            this.rbAuto = new System.Windows.Forms.RadioButton();
+            this.rbMoto = new System.Windows.Forms.RadioButton();
             this.rbBicicleta = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -54,6 +54,7 @@
             this.btnAgregarNumero.TabIndex = 1;
             this.btnAgregarNumero.Text = "Registrar Encuesta";
             this.btnAgregarNumero.UseVisualStyleBackColor = true;
+            this.btnAgregarNumero.Click += new System.EventHandler(this.btnAgregarNumero_Click);
             // 
             // groupBox1
             // 
@@ -69,7 +70,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.tbDistancia);
             this.groupBox4.Location = new System.Drawing.Point(11, 153);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(330, 68);
@@ -77,18 +78,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Distancia aproximada según el vehículo seleccionado";
             // 
-            // textBox1
+            // tbDistancia
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbDistancia.Location = new System.Drawing.Point(99, 33);
+            this.tbDistancia.Name = "tbDistancia";
+            this.tbDistancia.Size = new System.Drawing.Size(100, 20);
+            this.tbDistancia.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.rbPublico);
+            this.groupBox2.Controls.Add(this.rbAuto);
+            this.groupBox2.Controls.Add(this.rbMoto);
             this.groupBox2.Controls.Add(this.rbBicicleta);
             this.groupBox2.Location = new System.Drawing.Point(10, 19);
             this.groupBox2.Name = "groupBox2";
@@ -97,38 +98,38 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tipo de transporte de uso más frecuente";
             // 
-            // radioButton4
+            // rbPublico
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(35, 97);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(216, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Transporte público (colectivo, remis, etc)";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbPublico.AutoSize = true;
+            this.rbPublico.Location = new System.Drawing.Point(35, 97);
+            this.rbPublico.Name = "rbPublico";
+            this.rbPublico.Size = new System.Drawing.Size(216, 17);
+            this.rbPublico.TabIndex = 3;
+            this.rbPublico.TabStop = true;
+            this.rbPublico.Text = "Transporte público (colectivo, remis, etc)";
+            this.rbPublico.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbAuto
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(35, 74);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(71, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Automovil";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbAuto.AutoSize = true;
+            this.rbAuto.Location = new System.Drawing.Point(35, 74);
+            this.rbAuto.Name = "rbAuto";
+            this.rbAuto.Size = new System.Drawing.Size(71, 17);
+            this.rbAuto.TabIndex = 2;
+            this.rbAuto.TabStop = true;
+            this.rbAuto.Text = "Automovil";
+            this.rbAuto.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbMoto
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(35, 51);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(80, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Motocicleta";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbMoto.AutoSize = true;
+            this.rbMoto.Location = new System.Drawing.Point(35, 51);
+            this.rbMoto.Name = "rbMoto";
+            this.rbMoto.Size = new System.Drawing.Size(80, 17);
+            this.rbMoto.TabIndex = 1;
+            this.rbMoto.TabStop = true;
+            this.rbMoto.Text = "Motocicleta";
+            this.rbMoto.UseVisualStyleBackColor = true;
             // 
             // rbBicicleta
             // 
@@ -147,33 +148,34 @@
             this.groupBox3.Controls.Add(this.btnResultados);
             this.groupBox3.Location = new System.Drawing.Point(8, 249);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(447, 186);
+            this.groupBox3.Size = new System.Drawing.Size(447, 200);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Lista ordenada";
+            this.groupBox3.Text = "Resultados";
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(6, 19);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(427, 121);
+            this.listBox1.Size = new System.Drawing.Size(343, 173);
             this.listBox1.TabIndex = 3;
             // 
             // btnResultados
             // 
-            this.btnResultados.Location = new System.Drawing.Point(175, 146);
+            this.btnResultados.Location = new System.Drawing.Point(355, 60);
             this.btnResultados.Name = "btnResultados";
             this.btnResultados.Size = new System.Drawing.Size(86, 34);
             this.btnResultados.TabIndex = 1;
             this.btnResultados.Text = "Ver Resultados";
             this.btnResultados.UseVisualStyleBackColor = true;
+            this.btnResultados.Click += new System.EventHandler(this.btnResultados_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 442);
+            this.ClientSize = new System.Drawing.Size(463, 455);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormPrincipal";
@@ -196,12 +198,12 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnResultados;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbPublico;
+        private System.Windows.Forms.RadioButton rbAuto;
+        private System.Windows.Forms.RadioButton rbMoto;
         private System.Windows.Forms.RadioButton rbBicicleta;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDistancia;
     }
 }
 

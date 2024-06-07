@@ -16,10 +16,10 @@ namespace Ejercicio3_Infracciones
         {
             InitializeComponent();
         }
-
-        private void label10_Click(object sender, EventArgs e)
+        
+        private void btnRegistrarInfraccion_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
