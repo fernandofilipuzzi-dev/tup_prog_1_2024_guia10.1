@@ -12,15 +12,15 @@ namespace Ejercicio1_Encuesta
 {
     public partial class FormPrincipal : Form
     {
-        #region 
-        int bici = 0;
-        double distanciaBici = 0;//acumulador
+        #region variables y metodos del dominio del problema
+        int Bici = 0;
+        double DistanciaBici = 0;//acumulador
 
-        int moto = 0;
-        double distanciaMoto = 0;
+        int Moto = 0;
+        double DistanciaMoto = 0;
 
-        int auto = 0;
-        int publico = 0;
+        int Auto = 0;
+        int Publico = 0;
 
         void RegistrarEncuesta(int tipoVehiculo, double distancia)
         {
@@ -28,24 +28,24 @@ namespace Ejercicio1_Encuesta
             {
                 case 1: 
                     {
-                        bici++;
-                        distanciaBici += distancia;
+                        Bici++;
+                        DistanciaBici += distancia;
                     }
                     break;
                 case 2:
                     {
-                        moto++;
-                        distanciaMoto += distancia;
+                        Moto++;
+                        DistanciaMoto += distancia;
                     }
                     break;
                 case 3:
                     {
-                        auto++;
+                        Auto++;
                     }
                     break;
                 case 4:
                     {
-                        publico++;
+                        Publico++;
                     }
                     break;
             }
@@ -53,22 +53,22 @@ namespace Ejercicio1_Encuesta
 
         int CalcularPoblacion()
         {
-            return bici + moto + auto + publico;
+            return Bici + Moto + Auto + Publico;
         }
 
         double DistanciaPromedioBicicleta()
         {
             double promedio = 0;
-            if (bici > 0)
-                promedio = distanciaBici / bici;
+            if (Bici > 0)
+                promedio = DistanciaBici / Bici;
             return promedio;
         }
 
         double DistanciaPromedioMoto()
         {
             double promedio = 0;
-            if (moto > 0)
-                promedio = distanciaMoto / moto;
+            if (Moto > 0)
+                promedio = DistanciaMoto / Moto;
             return promedio;
         }
 
@@ -98,21 +98,21 @@ namespace Ejercicio1_Encuesta
             double distancia = Convert.ToInt32(tbDistancia.Text);
             if (rbBicicleta.Checked)
             { 
-                bici++;
-                distanciaBici += distancia;
+                Bici++;
+                DistanciaBici += distancia;
             }
             else if (rbMoto.Checked)
             {
-                moto++;
-                distanciaMoto+= distancia;
+                Moto++;
+                DistanciaMoto+= distancia;
             }
             else if (rbAuto.Checked)
             {
-                auto++;
+                Auto++;
             }
             else if (rbPublico.Checked)
             {
-                publico++;
+                Publico++;
             }
             */
             #endregion
@@ -136,16 +136,16 @@ namespace Ejercicio1_Encuesta
             listBox1.Items.Add("-------------------------------");
             
             listBox1.Items.Add("Cantidad de personas que usan:");
-            listBox1.Items.Add($"- Bicicleta: {bici}");
-            listBox1.Items.Add($"- Motocicleta: {moto}");
-            listBox1.Items.Add($"- Automovil: {auto}");
-            listBox1.Items.Add($"- Transporte público: {publico}");
+            listBox1.Items.Add($"- Bicicleta: {Bici}");
+            listBox1.Items.Add($"- Motocicleta: {Moto}");
+            listBox1.Items.Add($"- Automovil: {Auto}");
+            listBox1.Items.Add($"- Transporte público: {Publico}");
             
             listBox1.Items.Add("-------------------------------");
 
             listBox1.Items.Add("Distencia promedio por tipo de vehículo:");
-            listBox1.Items.Add($"- Bicicleta: {DistanciaPromedioBicicleta()}");
-            listBox1.Items.Add($"- Moto: {DistanciaPromedioMoto()}");
+            listBox1.Items.Add($"- Bicicleta: {DistanciaPromedioBicicleta():f2}");
+            listBox1.Items.Add($"- Moto: {DistanciaPromedioMoto():f2}");
         }
     }
 }
