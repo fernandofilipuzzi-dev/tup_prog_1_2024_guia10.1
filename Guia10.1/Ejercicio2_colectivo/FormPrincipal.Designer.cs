@@ -73,10 +73,10 @@
             this.gbLLegadaViaje.Controls.Add(this.btnFinalizarViaje);
             this.gbLLegadaViaje.Enabled = false;
             this.gbLLegadaViaje.Location = new System.Drawing.Point(686, 4);
-            this.gbLLegadaViaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbLLegadaViaje.Margin = new System.Windows.Forms.Padding(4);
             this.gbLLegadaViaje.Name = "gbLLegadaViaje";
-            this.gbLLegadaViaje.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbLLegadaViaje.Size = new System.Drawing.Size(388, 335);
+            this.gbLLegadaViaje.Padding = new System.Windows.Forms.Padding(4);
+            this.gbLLegadaViaje.Size = new System.Drawing.Size(389, 335);
             this.gbLLegadaViaje.TabIndex = 5;
             this.gbLLegadaViaje.TabStop = false;
             this.gbLLegadaViaje.Text = "Finalizar Recorrido";
@@ -94,7 +94,7 @@
             // tbMMFin
             // 
             this.tbMMFin.Location = new System.Drawing.Point(305, 41);
-            this.tbMMFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMMFin.Margin = new System.Windows.Forms.Padding(4);
             this.tbMMFin.Name = "tbMMFin";
             this.tbMMFin.Size = new System.Drawing.Size(53, 22);
             this.tbMMFin.TabIndex = 15;
@@ -102,7 +102,7 @@
             // tbHHFin
             // 
             this.tbHHFin.Location = new System.Drawing.Point(221, 41);
-            this.tbHHFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHHFin.Margin = new System.Windows.Forms.Padding(4);
             this.tbHHFin.Name = "tbHHFin";
             this.tbHHFin.Size = new System.Drawing.Size(53, 22);
             this.tbHHFin.TabIndex = 14;
@@ -112,7 +112,7 @@
             this.lbxResultadoFinal.FormattingEnabled = true;
             this.lbxResultadoFinal.ItemHeight = 16;
             this.lbxResultadoFinal.Location = new System.Drawing.Point(8, 145);
-            this.lbxResultadoFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbxResultadoFinal.Margin = new System.Windows.Forms.Padding(4);
             this.lbxResultadoFinal.Name = "lbxResultadoFinal";
             this.lbxResultadoFinal.Size = new System.Drawing.Size(368, 180);
             this.lbxResultadoFinal.TabIndex = 6;
@@ -130,7 +130,7 @@
             // btnFinalizarViaje
             // 
             this.btnFinalizarViaje.Location = new System.Drawing.Point(147, 80);
-            this.btnFinalizarViaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFinalizarViaje.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinalizarViaje.Name = "btnFinalizarViaje";
             this.btnFinalizarViaje.Size = new System.Drawing.Size(88, 58);
             this.btnFinalizarViaje.TabIndex = 0;
@@ -156,9 +156,9 @@
             this.gbParada.Controls.Add(this.btnRegistrarParada);
             this.gbParada.Enabled = false;
             this.gbParada.Location = new System.Drawing.Point(353, 5);
-            this.gbParada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbParada.Margin = new System.Windows.Forms.Padding(4);
             this.gbParada.Name = "gbParada";
-            this.gbParada.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbParada.Padding = new System.Windows.Forms.Padding(4);
             this.gbParada.Size = new System.Drawing.Size(325, 335);
             this.gbParada.TabIndex = 4;
             this.gbParada.TabStop = false;
@@ -169,7 +169,7 @@
             this.lbxResultadoParada.FormattingEnabled = true;
             this.lbxResultadoParada.ItemHeight = 16;
             this.lbxResultadoParada.Location = new System.Drawing.Point(8, 242);
-            this.lbxResultadoParada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbxResultadoParada.Margin = new System.Windows.Forms.Padding(4);
             this.lbxResultadoParada.Name = "lbxResultadoParada";
             this.lbxResultadoParada.Size = new System.Drawing.Size(308, 84);
             this.lbxResultadoParada.TabIndex = 19;
@@ -187,7 +187,7 @@
             // tbDescienden
             // 
             this.tbDescienden.Location = new System.Drawing.Point(163, 59);
-            this.tbDescienden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbDescienden.Margin = new System.Windows.Forms.Padding(4);
             this.tbDescienden.Name = "tbDescienden";
             this.tbDescienden.Size = new System.Drawing.Size(53, 22);
             this.tbDescienden.TabIndex = 17;
@@ -195,7 +195,7 @@
             // tbAscienden
             // 
             this.tbAscienden.Location = new System.Drawing.Point(163, 128);
-            this.tbAscienden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAscienden.Margin = new System.Windows.Forms.Padding(4);
             this.tbAscienden.Name = "tbAscienden";
             this.tbAscienden.Size = new System.Drawing.Size(53, 22);
             this.tbAscienden.TabIndex = 16;
@@ -243,7 +243,7 @@
             // tbMMSalida
             // 
             this.tbMMSalida.Location = new System.Drawing.Point(243, 96);
-            this.tbMMSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMMSalida.Margin = new System.Windows.Forms.Padding(4);
             this.tbMMSalida.Name = "tbMMSalida";
             this.tbMMSalida.Size = new System.Drawing.Size(53, 22);
             this.tbMMSalida.TabIndex = 12;
@@ -251,7 +251,7 @@
             // tbHHSalida
             // 
             this.tbHHSalida.Location = new System.Drawing.Point(163, 96);
-            this.tbHHSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHHSalida.Margin = new System.Windows.Forms.Padding(4);
             this.tbHHSalida.Name = "tbHHSalida";
             this.tbHHSalida.Size = new System.Drawing.Size(53, 22);
             this.tbHHSalida.TabIndex = 11;
@@ -269,7 +269,7 @@
             // tbMMParada
             // 
             this.tbMMParada.Location = new System.Drawing.Point(243, 27);
-            this.tbMMParada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMMParada.Margin = new System.Windows.Forms.Padding(4);
             this.tbMMParada.Name = "tbMMParada";
             this.tbMMParada.Size = new System.Drawing.Size(53, 22);
             this.tbMMParada.TabIndex = 9;
@@ -277,7 +277,7 @@
             // tbHHParada
             // 
             this.tbHHParada.Location = new System.Drawing.Point(163, 27);
-            this.tbHHParada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHHParada.Margin = new System.Windows.Forms.Padding(4);
             this.tbHHParada.Name = "tbHHParada";
             this.tbHHParada.Size = new System.Drawing.Size(53, 22);
             this.tbHHParada.TabIndex = 8;
@@ -286,7 +286,7 @@
             // 
             this.btnRegistrarParada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarParada.Location = new System.Drawing.Point(115, 175);
-            this.btnRegistrarParada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrarParada.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrarParada.Name = "btnRegistrarParada";
             this.btnRegistrarParada.Size = new System.Drawing.Size(103, 53);
             this.btnRegistrarParada.TabIndex = 0;
@@ -304,9 +304,9 @@
             this.gbInicioViaje.Controls.Add(this.tbHHInicio);
             this.gbInicioViaje.Controls.Add(this.btnIniciarRecorrido);
             this.gbInicioViaje.Location = new System.Drawing.Point(3, 4);
-            this.gbInicioViaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbInicioViaje.Margin = new System.Windows.Forms.Padding(4);
             this.gbInicioViaje.Name = "gbInicioViaje";
-            this.gbInicioViaje.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbInicioViaje.Padding = new System.Windows.Forms.Padding(4);
             this.gbInicioViaje.Size = new System.Drawing.Size(342, 335);
             this.gbInicioViaje.TabIndex = 3;
             this.gbInicioViaje.TabStop = false;
@@ -345,7 +345,7 @@
             // tbCantidadAsientos
             // 
             this.tbCantidadAsientos.Location = new System.Drawing.Point(197, 97);
-            this.tbCantidadAsientos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCantidadAsientos.Margin = new System.Windows.Forms.Padding(4);
             this.tbCantidadAsientos.Name = "tbCantidadAsientos";
             this.tbCantidadAsientos.Size = new System.Drawing.Size(101, 22);
             this.tbCantidadAsientos.TabIndex = 3;
@@ -353,7 +353,7 @@
             // tbMMInicio
             // 
             this.tbMMInicio.Location = new System.Drawing.Point(281, 65);
-            this.tbMMInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMMInicio.Margin = new System.Windows.Forms.Padding(4);
             this.tbMMInicio.Name = "tbMMInicio";
             this.tbMMInicio.Size = new System.Drawing.Size(53, 22);
             this.tbMMInicio.TabIndex = 2;
@@ -361,15 +361,15 @@
             // tbHHInicio
             // 
             this.tbHHInicio.Location = new System.Drawing.Point(197, 65);
-            this.tbHHInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHHInicio.Margin = new System.Windows.Forms.Padding(4);
             this.tbHHInicio.Name = "tbHHInicio";
             this.tbHHInicio.Size = new System.Drawing.Size(53, 22);
             this.tbHHInicio.TabIndex = 1;
             // 
             // btnIniciarRecorrido
             // 
-            this.btnIniciarRecorrido.Location = new System.Drawing.Point(156, 247);
-            this.btnIniciarRecorrido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIniciarRecorrido.Location = new System.Drawing.Point(112, 176);
+            this.btnIniciarRecorrido.Margin = new System.Windows.Forms.Padding(4);
             this.btnIniciarRecorrido.Name = "btnIniciarRecorrido";
             this.btnIniciarRecorrido.Size = new System.Drawing.Size(96, 53);
             this.btnIniciarRecorrido.TabIndex = 0;
@@ -386,7 +386,7 @@
             this.Controls.Add(this.gbParada);
             this.Controls.Add(this.gbInicioViaje);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPrincipal";
             this.Text = "Empresa de colectivos";
             this.gbLLegadaViaje.ResumeLayout(false);

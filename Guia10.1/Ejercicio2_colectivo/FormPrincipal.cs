@@ -15,7 +15,7 @@ namespace Ejercicio2_colectivo
     {
         #region dominio del problema
         int TiempoEnMMInicio = 0;
-        int TiempEnMMLLegada = 0;
+        int TiempoEnMMLLegada = 0;
         int TiempoTotalEnMMDemoras = 0;
 
         int CantidadPasajerosTransportados = 0;
@@ -27,13 +27,19 @@ namespace Ejercicio2_colectivo
         int Asientos=0;
         int AsientosOcupados = 0;
 
+        int TiempoEnMMUltimo = 0;//usado para verificar
+
         void RegistrarInicio(int hh, int mm, int a)
         {
             TiempoEnMMInicio = hh*60 + mm;
             Asientos = a;
+
+            TiempoEnMMUltimo = TiempoEnMMInicio;
         }
 
-        bool RegistrarParada(int HHParada,int MMParada,int descienden,int HHSalida,int MMSalida,int ascienden, out int HH, out int MM)
+        bool RegistrarParada(int HHParada,int MMParada,int descienden,
+                                int HHSalida,int MMSalida,int ascienden, 
+                                out int HH, out int MM)
         {
             HH = 0;
             MM = 0;
@@ -46,7 +52,9 @@ namespace Ejercicio2_colectivo
             int aOcupar = AsientosOcupados + ascienden - descienden;
 
             //verifico que el tiempo fue bien cargado y la ocupación
-            if (tiempoParadaSalida > tiempoParadaLLegada  && tiempoParadaLLegada > TiempoEnMMInicio && aOcupar<=Asientos)
+            if (tiempoParadaSalida >= tiempoParadaLLegada &&  //salida mayor o igual a la llegada
+                    tiempoParadaLLegada >= TiempoEnMMUltimo && //mayor o igual al de la ultima parada o inicio
+                    aOcupar>=0 && aOcupar<=Asientos)//que no bajen o suban mas de los que debería
             {
                 int tiempoDemora = tiempoParadaSalida-tiempoParadaLLegada;
                 HH = tiempoDemora / 60;
@@ -65,6 +73,7 @@ namespace Ejercicio2_colectivo
                 CantidadParadas++;
 
                 fueRegistrado = true;
+                TiempoEnMMUltimo = tiempoParadaSalida;
             }
 
             return fueRegistrado;
@@ -72,20 +81,25 @@ namespace Ejercicio2_colectivo
 
         bool FinalizarViaje(int HHLLegada,int MMLLegada)
         {
-            TiempEnMMLLegada = HHLLegada * 60 + MMLLegada;
-
-            //verificar el tiempo de llegada que sea mayor al de la ultima parada
-            return true;
+            int tiempo = HHLLegada * 60 + MMLLegada;
+            bool valido = false;
+            if (tiempo>TiempoEnMMUltimo)
+            {
+                TiempoEnMMLLegada = tiempo;
+                valido = true;
+            }
+                            
+            return valido;
         }
 
         void DuracionViaje(int HHLLegada, int MMLLegada)
         {
-            TiempEnMMLLegada = HHLLegada * 60 + MMLLegada;
+            TiempoEnMMLLegada = HHLLegada * 60 + MMLLegada;
         }
 
         void CalcularDuracionViajeSinDemora(out int HH, out int MM)
         {
-            int tiempoDuracion = TiempEnMMLLegada - TiempoEnMMInicio - TiempoTotalEnMMDemoras;
+            int tiempoDuracion = TiempoEnMMLLegada - TiempoEnMMInicio - TiempoTotalEnMMDemoras;
             HH = tiempoDuracion / 60;
             MM = tiempoDuracion % 60;
         }
@@ -109,19 +123,47 @@ namespace Ejercicio2_colectivo
 
         private void btnIniciarRecorrido_Click(object sender, EventArgs e)
         {
-            int HH=Convert.ToInt32(tbHHInicio.Text);
+            #region inicializo las variables
+            TiempoEnMMInicio = 0;
+            TiempoEnMMLLegada = 0;
+            TiempoTotalEnMMDemoras = 0;
+            CantidadPasajerosTransportados = 0;
+            CantidadParadas = 0;
+            CantidadDesciendenTotal = 0;
+            CantidadAsciendenTotal = 0;
+            Asientos = 0;
+            AsientosOcupados = 0;
+            TiempoEnMMUltimo = 0;
+            #endregion
+
+            int HH =Convert.ToInt32(tbHHInicio.Text);
             int MM = Convert.ToInt32(tbMMInicio.Text);
             int asientos = Convert.ToInt32(tbCantidadAsientos.Text);
 
             RegistrarInicio(HH, MM, asientos);
 
+            #region clear
             gbInicioViaje.Enabled = false;
             gbParada.Enabled = true;
             gbLLegadaViaje.Enabled = true;
+            //
+            tbHHParada.Clear();
+            tbMMParada.Clear();
+            tbDescienden.Clear();
+            tbHHSalida.Clear();
+            tbMMSalida.Clear();
+            tbAscienden.Clear();
+            lbxResultadoParada.Items.Clear();
+            //
+            tbHHFin.Clear();
+            tbMMFin.Clear();
+            lbxResultadoFinal.Items.Clear();
+            #endregion
         }
 
         private void btnRegistrarParada_Click(object sender, EventArgs e)
         {
+            #region datos de entrada
             int HHParada = Convert.ToInt32(tbHHParada.Text);
             int MMParada = Convert.ToInt32(tbMMParada.Text);
             int descienden = Convert.ToInt32(tbDescienden.Text);
@@ -129,29 +171,33 @@ namespace Ejercicio2_colectivo
             int HHSalida = Convert.ToInt32(tbHHSalida.Text);
             int MMSalida = Convert.ToInt32(tbMMSalida.Text);
             int ascienden = Convert.ToInt32(tbAscienden.Text);
+            #endregion 
 
             lbxResultadoParada.Items.Clear();
 
             int HH, MM;
-            bool verificacion=RegistrarParada(HHParada, MMParada, descienden, HHSalida, MMSalida, ascienden, out HH, out MM);
+            bool verificacion=RegistrarParada(HHParada, MMParada, descienden, 
+                                                HHSalida, MMSalida, ascienden, 
+                                                out HH, out MM);
 
             if (verificacion)
             {
                 //-a
-                lbxResultadoParada.Items.Add($"Cantidad total de personas que han descendido: {CantidadDesciendenTotal}");
+                lbxResultadoParada.Items.Add($"* Total de personas durante todo el viaje:");
+                lbxResultadoParada.Items.Add($" - Que han descendido: {CantidadDesciendenTotal}");
 
                 //-b
-                lbxResultadoParada.Items.Add($"Cantidad total de personas que han ascendido: {CantidadAsciendenTotal}");
+                lbxResultadoParada.Items.Add($" - Que han ascendido: {CantidadAsciendenTotal}");
 
                 //-c
-                lbxResultadoParada.Items.Add($"Demora de la parada: {HH}:{MM}");
+                lbxResultadoParada.Items.Add($"* Demora de la parada: {HH}:{MM}");
 
                 //-d
-                lbxResultadoParada.Items.Add($"Porcentaje de ocupación: {PorcentajeAsientosOcupados():f2}%");
+                lbxResultadoParada.Items.Add($"* Porcentaje de ocupación: {PorcentajeAsientosOcupados():f2}%");
             }
             else
             {
-                lbxResultadoParada.Items.Add("Verifiquen los datos de entrada");
+                lbxResultadoParada.Items.Add("* Verifiquen los datos de entrada");
             }
         }
 
@@ -171,18 +217,23 @@ namespace Ejercicio2_colectivo
                 int HH, MM;
 
                 //-a
-                lbxResultadoFinal.Items.Add($"Cantidad Pasajeros transportados {CantidadPasajerosTransportados}");
+                lbxResultadoFinal.Items.Add($"*Durante todo el viaje:");
+                lbxResultadoFinal.Items.Add($" - Cantidad Pasajeros transportados:{CantidadPasajerosTransportados}");
 
                 //-b
                 CalcularDuracionViajeSinDemora(out HH, out MM);
-                lbxResultadoFinal.Items.Add($"Duración del viaje: {HH}:{MM}");
+                lbxResultadoFinal.Items.Add($"* Duración del viaje: {HH}:{MM}");
 
                 //-c
-                lbxResultadoFinal.Items.Add($"Cantidad de Paradas: {CantidadParadas}");
+                lbxResultadoFinal.Items.Add($"* Cantidad de Paradas: {CantidadParadas}");
 
                 //-d
                 TiempoTotalEnDemorasHHMM(out HH, out MM);
-                lbxResultadoFinal.Items.Add($"TiempoTotalEnDemoras: {HH}:{MM}");
+                lbxResultadoFinal.Items.Add($"* TiempoTotalEnDemoras: {HH}:{MM}");
+
+                //reinicio para el siguiente viaje
+                gbInicioViaje.Enabled = true;
+                gbLLegadaViaje.Enabled = false;
             }
             else
             {
